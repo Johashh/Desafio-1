@@ -1,12 +1,13 @@
+/* ============ VARIAVEIS ============*/
+:root {
+    --cor-principal: black;
+    --cor-secundaria: #385185;
+    --bg-cor: bisque;
+}
+
 * {
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: rgba(23, 21, 19, 0.882);
-    height: 100px;
-    align-items: center;
 }
 
 .flex-container {
@@ -15,46 +16,21 @@ header {
 
     width: auto;
     height: auto;
-
-    justify-content: space-between;
-
 }
 
 .flex-container img {
     margin: 20px;
 }
 
-.menu {
-    display: flex;
-    flex-direction: row;
-}
-
-.menu a {
-    padding-inline: 20px;
-    display: flex;
-
-    align-items: center;
-    align-content: space-between;
-
-    font-size: 18px;
-    text-decoration: none;
-    color: white;
-}
-
 .flex-container.central {
     display: flex;
-    height: 100vh;
 
-    align-content: space-between;
     justify-items: center;
-}
+    justify-content: space-evenly;
 
-/*.flex-container .img-central {
-    margin-block: auto;
-    margin-inline: auto;
+    background-image: url('imgs/bg.jpg');
+    background-size: cover;
 }
-Pq a img saiu do centro?
-*/
 
 .flex-container.central .logo-ygo {
     display: flex;
@@ -62,7 +38,16 @@ Pq a img saiu do centro?
     align-items: center;
     justify-content: center;
 
-    border: 1px solid black;
+    margin-left: 100px;
+}
+
+.logo-ygo h1{
+    font-size: 50px;
+    color: white;
+}
+
+.flex-container .container-secundario {
+    flex-direction: column;
 }
 
 .flex-container .login {
@@ -70,15 +55,19 @@ Pq a img saiu do centro?
     flex-direction: column;
     align-items: center;
 
+    margin-right: 100px;
+
+    width: 300px; 
     height: auto; 
-    width: auto; 
     
-    margin-inline: auto;
-    margin-block: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding-bottom: 20px;
 
-    border: 1px solid #73707099;
+    border: 2px solid var(--cor-principal);
     border-radius: 15px;
+
+    background-color: var(--bg-cor);
 }
 
 .login .campo {
@@ -89,7 +78,7 @@ Pq a img saiu do centro?
     width: 217px;
     height: 40px;
 
-    border: 1px solid #73707099;
+    border: 1px solid --cor-principal;
     border-radius: 15px;
 }
 
@@ -145,7 +134,7 @@ Pq a img saiu do centro?
     align-items: center;
     justify-content: start;
     color: #385185;
-    border: 1px solid #385185;
+    border: 2px solid #385185;
 }
 
 .login .botao-gm {
@@ -153,41 +142,122 @@ Pq a img saiu do centro?
     align-items: center;
     justify-content: start;
     color: #FF0809;
-    border: 1px solid #FF0809;
+    border: 2px solid #FF0809;
 }
 
 .login .botao-fb svg {
     margin-inline: 5px;
 }
 
-
-
 .login .botao-gm {
     color: #FF0809;
     border: 1px solid #FF0809;
 }
 
-/*.login .botao2 {
-    margin-top: 10px;
-    width: 200px;
-    height: 40px;
+.cadastro {
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
 
-    font-weight: 700;
+width: 300px;
+height: 40px;
 
-    color: black;
-    border: 1px solid rgb(56, 81, 133);
-    border-radius: 15px;
+border: 2px solid var(--cor-principal);
+border-radius: 15px;
+
+background-color: var(--bg-cor);
 }
 
+.container-secundario .cadastro a {
+    text-decoration: none;
+    color: black;
+}
 
+ .container-secundario .cadastro strong {
+    color: #FF0809;
+ }
 
-.login p::before {
-    display: block;
-    content: "";
-    background-color: #73707099;
-    width: 300px;
-    height: 1px;
+ .container-secundario h5 p {
+    display: flex;
+    justify-content: center;
+
+    margin-right: 100px;
     margin-top: 10px;
-    margin-bottom: 10px;
-    rgb(56, 81, 133)
-}*/
+    margin-bottom: 0;
+
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--cor-principal);
+ }
+
+ .container-secundario .lojas {
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+ }
+
+ .container-secundario .lojas svg {
+    width: 50%;
+
+    margin-top: 5px;
+    margin-inline: 5px;
+
+ }
+
+ /* ============ MOBILE ============*/
+ @media(max-width: 992px) {
+    .flex-container.central,
+    .flex-container .logo-ygo, 
+    .flex-container .container-secundario,
+    .flex-container .login
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .flex-container.central .logo-ygo svg {
+        width: 90%;
+    }
+
+    .flex-container.central .logo-ygo h1 {
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .flex-container .login {
+        width: 260px;
+        margin-inline:  0;
+    }
+
+    .flex-container .login svg {
+        width: 80%;
+    }
+
+    .container-secundario .login .botao-fb svg {
+        width: 25px;
+    }
+
+    .container-secundario .login .botao-gm svg {
+        width: 25px;
+        margin-inline: 5px;
+    }
+
+    .flex-container.central .logo-ygo {
+        margin-inline: 0;
+        margin-block: auto;
+    }
+
+    .container-secundario h5 p {
+        margin-inline: 0;
+    }
+
+    .container-secundario .cadastro,
+    .container-secundario .lojas {
+        width: 260px;
+    }
+
+}
