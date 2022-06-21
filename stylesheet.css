@@ -10,12 +10,16 @@
     padding: 0;
 }
 
+body, html {
+    height: 100%;
+}
+
 .flex-container {
     display: flex;
     margin: auto;
 
     width: auto;
-    height: auto;
+    min-height: 100%;
 }
 
 .flex-container img {
@@ -25,7 +29,7 @@
 .flex-container.central {
     display: flex;
 
-    justify-items: center;
+    align-items: center;
     justify-content: space-evenly;
 
     background-image: url('imgs/bg.jpg');
@@ -43,7 +47,7 @@
 
 .logo-ygo h1{
     font-size: 50px;
-    color: white;
+    color: var(--cor-principal);
 }
 
 .flex-container .container-secundario {
@@ -147,11 +151,6 @@
 
 .login .botao-fb svg {
     margin-inline: 5px;
-}
-
-.login .botao-gm {
-    color: #FF0809;
-    border: 1px solid #FF0809;
 }
 
 .cadastro {
