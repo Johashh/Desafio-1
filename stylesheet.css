@@ -8,6 +8,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: arial;
 }
 
 body, html {
@@ -46,8 +47,11 @@ body, html {
 }
 
 .logo-ygo h1{
+    text-align: center;
     font-size: 50px;
     color: var(--cor-principal);
+    -webkit-text-stroke: 1px white;
+    max-width: 600px;
 }
 
 .flex-container .container-secundario {
@@ -155,12 +159,14 @@ body, html {
 
 .cadastro {
 display: flex;
+flex-direction: column;
 text-align: center;
 align-items: center;
 justify-content: center;
 
 width: 300px;
-height: 40px;
+height: auto;
+padding-block: 20px;
 
 border: 2px solid var(--cor-principal);
 border-radius: 15px;
@@ -181,7 +187,7 @@ background-color: var(--bg-cor);
     display: flex;
     justify-content: center;
 
-    margin-right: 100px;
+    margin-inline: 5px;
     margin-top: 10px;
     margin-bottom: 0;
 
